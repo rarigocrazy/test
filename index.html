@@ -265,230 +265,22 @@
             transform: translateX(-50%) translateY(0);
         }
         
-        .deposit-currencies {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin: 20px 0;
-        }
-        
-        .currency-btn {
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.15);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-            color: white;
-        }
-        
-        .currency-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-        
-        .wallet-address {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            border-radius: 10px;
-            font-family: monospace;
-            word-break: break-all;
-            margin: 15px 0;
-            border: 2px dashed rgba(255, 255, 255, 0.3);
-            color: white;
-        }
-        
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.7);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .modal-content {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 30px;
-            border-radius: 20px;
-            width: 90%;
-            max-width: 400px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-            backdrop-filter: blur(10px);
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: #333;
-        }
-        
-        .form-input {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e1e5e9;
-            border-radius: 10px;
-            font-size: 16px;
-        }
-        
-        .form-input:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-        
-        .modal-actions {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .modal-btn {
-            flex: 1;
-            padding: 12px;
-            border: none;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-        }
-        
-        .confirm-btn {
-            background: linear-gradient(135deg, #43e97b, #38f9d7);
-            color: white;
-        }
-        
-        .cancel-btn {
-            background: linear-gradient(135deg, #fa709a, #fee140);
-            color: white;
-        }
-        
-        .p2p-type {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        
-        .p2p-type-btn {
-            flex: 1;
-            padding: 15px;
-            border: 2px solid #e1e5e9;
-            border-radius: 10px;
-            background: white;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .p2p-type-btn.active {
-            border-color: var(--primary);
-            background: var(--primary);
-            color: white;
-        }
-        
-        .history-item {
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white;
-        }
-        
-        .history-item-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-        
-        .history-item-details {
-            font-size: 14px;
-            opacity: 0.9;
-        }
-        
-        .history-section {
-            max-height: 300px;
-            overflow-y: auto;
-            margin-top: 15px;
-            padding-right: 10px;
-        }
-        
-        .history-section::-webkit-scrollbar {
-            width: 6px;
-        }
-        
-        .history-section::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 3px;
-        }
-        
-        .history-section::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 3px;
-        }
-        
-        /* Анимированные доллары */
-        .dollar {
-            position: absolute;
-            font-size: 24px;
-            z-index: 1;
-            pointer-events: none;
-            user-select: none;
-            animation: fly linear infinite;
-        }
-        
-        @keyframes fly {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-            }
-            100% {
-                transform: translateY(-100px) rotate(360deg);
-            }
-        }
-        
-        @keyframes wingFlap {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
-            25% {
-                transform: translateY(-5px) rotate(5deg);
-            }
-            50% {
-                transform: translateY(0) rotate(0deg);
-            }
-            75% {
-                transform: translateY(-5px) rotate(-5deg);
-            }
-        }
-        
-        .dollar::before {
-            content: "$";
-            display: block;
-            animation: wingFlap 0.5s ease-in-out infinite;
-        }
-        
         .loading {
             text-align: center;
-            padding: 20px;
+            padding: 30px;
             color: white;
         }
+        
         .spinner {
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            border-top: 4px solid white;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid var(--primary);
             border-radius: 50%;
             width: 30px;
             height: 30px;
             animation: spin 1s linear infinite;
-            margin: 0 auto;
+            margin: 0 auto 15px;
         }
+        
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
@@ -502,21 +294,13 @@
             .stats-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .deposit-currencies {
-                grid-template-columns: 1fr;
-            }
-            
-            .p2p-type {
-                flex-direction: column;
-            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>💰 Инвестиционная Платформа</h1>
+            <h1>💰 Инвестиционный Бот</h1>
             <p>Управляйте своими активами</p>
         </div>
         
@@ -525,7 +309,7 @@
             <p>Загрузка данных...</p>
         </div>
 
-        <div id="main-content" style="display:none;">
+        <div id="main-content" style="display: none;">
             <div class="balance-card">
                 <div class="balance-title">Ваш текущий баланс</div>
                 <div class="balance-amount" id="balance">0.00 USD</div>
@@ -552,13 +336,13 @@
                     <div class="action-icon">💳</div>
                     <div class="action-text">Пополнить</div>
                 </div>
+                <div class="action-btn" onclick="openCreateCheck()">
+                    <div class="action-icon">🧾</div>
+                    <div class="action-text">Создать чек</div>
+                </div>
                 <div class="action-btn" onclick="openWithdraw()">
                     <div class="action-icon">📤</div>
                     <div class="action-text">Вывести</div>
-                </div>
-                <div class="action-btn" onclick="openP2P()">
-                    <div class="action-icon">🔁</div>
-                    <div class="action-text">P2P Торговля</div>
                 </div>
                 <div class="action-btn" onclick="openCalculator()">
                     <div class="action-icon">🧮</div>
@@ -584,432 +368,110 @@
                 <div class="referral-input" id="referral-link">Загрузка...</div>
                 <button class="copy-btn" onclick="copyReferralLink()">Копировать ссылку</button>
             </div>
-            
-            <h2 class="section-title">История операций</h2>
-            <div class="history-section" id="history-section">
-                <div class="history-item">
-                    <div class="history-item-header">
-                        <span>Начисление процентов</span>
-                        <span>+25.50 USD</span>
-                    </div>
-                    <div class="history-item-details">Сегодня, 10:30</div>
-                </div>
-                <!-- Добавьте больше элементов истории или загрузите их динамически -->
-            </div>
-        </div>
-    </div>
-    
-    <!-- Модал для выбора валюты пополнения -->
-    <div class="modal" id="deposit-modal">
-        <div class="modal-content">
-            <h3 style="text-align: center; margin-bottom: 20px; color: #333;">Выберите валюту</h3>
-            <div class="deposit-currencies">
-                <button class="currency-btn" onclick="selectCurrency('TON')">🔷 TON</button>
-                <button class="currency-btn" onclick="selectCurrency('USDT')">🟡 USDT</button>
-                <button class="currency-btn" onclick="selectCurrency('TRX')">🔺 TRX</button>
-            </div>
-            <button class="cancel-btn" onclick="closeModal('deposit-modal')" style="width: 100%;">Отмена</button>
-        </div>
-    </div>
-    
-    <!-- Модал для отображения кошелька -->
-    <div class="modal" id="wallet-modal">
-        <div class="modal-content">
-            <h3 style="text-align: center; margin-bottom: 20px; color: #333;" id="wallet-title">Пополнение</h3>
-            <div class="form-group">
-                <label class="form-label">Адрес кошелька:</label>
-                <div class="wallet-address" id="wallet-address">Загрузка...</div>
-            </div>
-            <div class="form-group">
-                <label class="form-label">Сумма:</label>
-                <input type="number" class="form-input" id="deposit-amount" placeholder="Введите сумму">
-            </div>
-            <div class="modal-actions">
-                <button class="cancel-btn" onclick="closeModal('wallet-modal')">Закрыть</button>
-                <button class="confirm-btn" onclick="confirmDeposit()">Подтвердить</button>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Модал для вывода средств -->
-    <div class="modal" id="withdraw-modal">
-        <div class="modal-content">
-            <h3 style="text-align: center; margin-bottom: 20px; color: #333;">Вывод средств</h3>
-            <div class="form-group">
-                <label class="form-label">Доступный баланс:</label>
-                <div style="font-size: 20px; font-weight: bold; color: #4a6fa5;" id="available-balance">0.00 USD</div>
-            </div>
-            <div class="form-group">
-                <label class="form-label">Сумма для вывода:</label>
-                <input type="number" class="form-input" id="withdraw-amount" placeholder="Введите сумму">
-            </div>
-            <div class="form-group">
-                <label class="form-label">Адрес кошелька получателя:</label>
-                <input type="text" class="form-input" id="withdraw-address" placeholder="Введите адрес кошелька">
-            </div>
-            <div class="modal-actions">
-                <button class="cancel-btn" onclick="closeModal('withdraw-modal')">Отмена</button>
-                <button class="confirm-btn" onclick="confirmWithdraw()">Вывести</button>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Модал для P2P торговли -->
-    <div class="modal" id="p2p-modal">
-        <div class="modal-content">
-            <h3 style="text-align: center; margin-bottom: 20px; color: #333;">P2P Торговля</h3>
-            <div class="p2p-type">
-                <button class="p2p-type-btn active" onclick="selectP2PType('buy')" id="p2p-buy">Купить</button>
-                <button class="p2p-type-btn" onclick="selectP2PType('sell')" id="p2p-sell">Продать</button>
-            </div>
-            <div class="form-group">
-                <label class="form-label">Сумма (USDT):</label>
-                <input type="number" class="form-input" id="p2p-amount" placeholder="Введите сумму">
-            </div>
-            <div class="form-group">
-                <label class="form-label">Курс (USDT/RUB):</label>
-                <input type="number" class="form-input" id="p2p-rate" placeholder="Введите курс" step="0.01">
-            </div>
-            <div class="form-group">
-                <label class="form-label">Комментарий:</label>
-                <input type="text" class="form-input" id="p2p-comment" placeholder="Описание сделки">
-            </div>
-            <div class="modal-actions">
-                <button class="cancel-btn" onclick="closeModal('p2p-modal')">Отмена</button>
-                <button class="confirm-btn" onclick="confirmP2P()">Создать предложение</button>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Модал для калькулятора -->
-    <div class="modal" id="calculator-modal">
-        <div class="modal-content">
-            <h3 style="text-align: center; margin-bottom: 20px; color: #333;">Калькулятор дохода</h3>
-            <div class="form-group">
-                <label class="form-label">Сумма инвестиции (USD):</label>
-                <input type="number" class="form-input" id="calc-amount" placeholder="Введите сумму">
-            </div>
-            <div class="modal-actions">
-                <button class="cancel-btn" onclick="closeModal('calculator-modal')">Закрыть</button>
-                <button class="confirm-btn" onclick="calculateIncome()">Рассчитать</button>
-            </div>
-            <div id="calc-results" style="margin-top: 20px; display: none;">
-                <h4 style="margin-bottom: 10px;">Результаты расчета:</h4>
-                <div id="calc-results-content"></div>
-            </div>
         </div>
     </div>
     
     <div class="notification" id="notification">Ссылка скопирована!</div>
     
     <script>
-        // Проверка наличия Telegram WebApp API
-        let WebApp;
-        if (typeof window !== 'undefined' && window.Telegram && window.Telegram.WebApp) {
-            WebApp = window.Telegram.WebApp;
-            try {
-                WebApp.ready();
-                WebApp.expand();
-            } catch (e) {
-                console.error('Ошибка инициализации Telegram WebApp:', e);
-            }
-        } else {
-            console.warn('Telegram WebApp API недоступен');
-            WebApp = {
-                ready: function() { console.log('WebApp ready (fake)'); },
-                expand: function() { console.log('WebApp expand (fake)'); },
-                initData: "user=%7B%22id%22%3A123456789%2C%22first_name%22%3A%22Test%22%2C%22last_name%22%3A%22User%22%2C%22username%22%3A%22testuser%22%2C%22language_code%22%3A%22en%22%2C%22is_premium%22%3Atrue%7D&chat_instance=-123456789012345678&chat_type=private&auth_date=1700000000&hash=...", // Фейковые данные для тестирования
-                initDataUnsafe: { user: { id: 123456789, first_name: "Test", last_name: "User", username: "testuser" } },
-                sendData: function(data) { 
-                    console.log('Отправка данных (fake):', data); 
-                    showNotification('Данные отправлены (тестовый режим)');
-                }
-            };
-        }
+        const WebApp = window.Telegram.WebApp;
+        WebApp.ready();
+        WebApp.expand();
         
-        // Глобальные переменные
         let userData = {};
-        let userBalance = 0; // Будет заполнено из API
-        let selectedCurrency = '';
-        let p2pType = 'buy'; // 'buy' или 'sell'
+        let userBalance = 0;
         
-        // Адреса кошельков (замените на реальные адреса)
-        const walletAddresses = {
-            'TON': 'EQCD39v73u6d4b13zG2R6z1G2R6z1G2R6z1G2R6z1G2R6z1G',
-            'USDT': '0x742d35Cc6634C0532925a3b844Bc454e4438f44e',
-            'TRX': 'TQa7Z3Dd9iM8hwkUPf1wQYx5Jm9H3Yx23a'
-        };
-        
-        // Создание анимированных долларов
-        function createFlyingDollars() {
-            const container = document.body;
-            const dollarCount = 15;
-            
-            for (let i = 0; i < dollarCount; i++) {
-                const dollar = document.createElement('div');
-                dollar.className = 'dollar';
-                dollar.style.left = Math.random() * 100 + 'vw';
-                dollar.style.animationDuration = (Math.random() * 10 + 10) + 's';
-                dollar.style.animationDelay = Math.random() * 5 + 's';
-                dollar.style.fontSize = (Math.random() * 20 + 20) + 'px';
-                dollar.style.opacity = Math.random() * 0.5 + 0.3;
-                container.appendChild(dollar);
-            }
-        }
-        
-        // Функция для получения данных пользователя с сервера
-        async function fetchUserData() {
-            const loadingSection = document.getElementById('loading-section');
-            const mainContent = document.getElementById('main-content');
-            
+        // Инициализация приложения
+        async function initApp() {
             try {
-                // Получаем initData из Telegram WebApp
-                const initData = WebApp.initData;
-                if (!initData) {
-                    throw new Error('InitData отсутствует');
-                }
+                // Получаем данные пользователя из Telegram
+                // initDataUnsafe не требует валидации на клиенте, но сервер должен валидировать
+                userData = WebApp.initDataUnsafe.user || {};
                 
-                // Отправляем запрос к вашему API
-                // Замените 'http://localhost:8080' на ваш реальный адрес API
-                const response = await fetch('http://localhost:8080/api/user', {
-                    method: 'GET',
-                    headers: {
-                        'Authorization': `Telegram ${initData}`,
-                        'Content-Type': 'application/json'
-                    }
-                });
+                // Загружаем данные с сервера
+                await loadUserData();
                 
-                if (!response.ok) {
-                    const errorData = await response.json();
-                    throw new Error(errorData.error || `Ошибка API: ${response.status}`);
-                }
-                
-                const data = await response.json();
-                console.log('Получены данные пользователя:', data);
-                
-                // Сохраняем данные
-                userData = data;
-                userBalance = data.balance;
-                
-                // Обновляем UI
+                // Обновляем интерфейс
                 updateUI();
                 
-                // Показываем основной контент
-                loadingSection.style.display = 'none';
-                mainContent.style.display = 'block';
-                
-                // Создаем летающие доллары
-                createFlyingDollars();
+                // Скрываем загрузку, показываем контент
+                document.getElementById('loading-section').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
                 
             } catch (error) {
-                console.error('Ошибка загрузки данных пользователя:', error);
-                showNotification(`Ошибка загрузки данных: ${error.message}`, 'error');
-                // Можно показать кнопку повтора или перейти в автономный режим
-                loadingSection.innerHTML = `<p style="color: red;">Ошибка: ${error.message}</p><button onclick="fetchUserData()">Повторить попытку</button>`;
+                console.error('Ошибка инициализации:', error);
+                showNotification('Ошибка загрузки данных', 'error');
+                document.getElementById('loading-section').innerHTML = `<p style="color: red;">Ошибка: ${error.message}</p>`;
             }
         }
         
-        // Обновление интерфейса с реальными данными
-        function updateUI() {
-            if (!userData) return;
+        // Загрузка данных пользователя с сервера
+        async function loadUserData() {
+            const initData = WebApp.initData;
+            if (!initData) {
+                throw new Error('InitData отсутствует');
+            }
             
-            document.getElementById('balance').textContent = `${userData.balance.toFixed(2)} USD`;
-            document.getElementById('available-balance').textContent = `${userData.balance.toFixed(2)} USD`;
-            document.getElementById('total-deposited').textContent = `${userData.total_deposited.toFixed(2)} USD`;
-            document.getElementById('total-withdrawn').textContent = `${userData.total_withdrawn.toFixed(2)} USD`;
-            document.getElementById('referral-link').textContent = userData.referral_link || 'Ссылка не доступна';
+            // TODO: ЗАМЕНИТЕ НА IP/ДОМЕН ВАШЕГО СЕРВЕРА
+            const apiUrl = 'http://ВАШ_IP:8080/api/user'; // Например: 'http://64.188.79.162:8080/api/user'
+            
+            const response = await fetch(apiUrl, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Telegram ${initData}`,
+                    'Content-Type': 'application/json'
+                }
+            });
+            
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || `Ошибка API: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            console.log('Получены данные пользователя:', data);
+            
+            // Сохраняем данные
+            userData = data;
+            userBalance = data.balance;
+            
+            // Имитация статистики (в реальном приложении берется с сервера)
+            document.getElementById('total-deposited').textContent = `${data.total_deposited || (Math.random() * 3000).toFixed(2)} USD`;
+            document.getElementById('total-withdrawn').textContent = `${data.total_withdrawn || (Math.random() * 1000).toFixed(2)} USD`;
+            document.getElementById('referral-link').textContent = data.referral_link || 'Ссылка не доступна';
+        }
+        
+        // Обновление интерфейса
+        function updateUI() {
+            document.getElementById('balance').textContent = `${userBalance} USD`;
             
             // Расчет прогресса
-            const progress = Math.min(100, (userData.balance / 1000) * 100);
+            const progress = Math.min(100, (userBalance / 1000) * 100);
             document.getElementById('progress-fill').style.width = `${progress}%`;
             document.getElementById('progress-text').textContent = `${progress.toFixed(1)}%`;
             
             // Расчет ежедневного дохода
-            const rate = userData.balance >= 1000 ? 3 : 2;
-            const dailyIncome = (userData.balance * rate / 100).toFixed(2);
+            const rate = userBalance >= 1000 ? 3 : 2;
+            const dailyIncome = (userBalance * rate / 100).toFixed(2);
             document.getElementById('daily-income').textContent = `${dailyIncome} USD`;
             document.getElementById('rate').textContent = `${rate}%`;
         }
         
-        // Функции навигации
+        // Функции навигации (открывают разделы в основном боте)
         function openDeposit() {
-            document.getElementById('deposit-modal').style.display = 'flex';
+            WebApp.openTelegramLink('https://t.me/your_bot_username?start=deposit'); // TODO: Замените your_bot_username
         }
         
         function openWithdraw() {
-            document.getElementById('withdraw-modal').style.display = 'flex';
+            WebApp.openTelegramLink('https://t.me/your_bot_username?start=withdraw'); // TODO: Замените your_bot_username
         }
         
-        function openP2P() {
-            // Сброс значений формы
-            document.getElementById('p2p-amount').value = '';
-            document.getElementById('p2p-rate').value = '';
-            document.getElementById('p2p-comment').value = '';
-            document.getElementById('p2p-modal').style.display = 'flex';
+        function openCreateCheck() {
+            WebApp.openTelegramLink('https://t.me/your_bot_username?start=create_check'); // TODO: Замените your_bot_username
         }
         
         function openCalculator() {
-            document.getElementById('calc-amount').value = '';
-            document.getElementById('calc-results').style.display = 'none';
-            document.getElementById('calculator-modal').style.display = 'flex';
-        }
-        
-        // Выбор типа P2P операции
-        function selectP2PType(type) {
-            p2pType = type;
-            document.getElementById('p2p-buy').classList.toggle('active', type === 'buy');
-            document.getElementById('p2p-sell').classList.toggle('active', type === 'sell');
-        }
-        
-        // Работа с модальными окнами
-        function selectCurrency(currency) {
-            selectedCurrency = currency;
-            document.getElementById('deposit-modal').style.display = 'none';
-            document.getElementById('wallet-title').textContent = `Пополнение ${currency}`;
-            document.getElementById('wallet-address').textContent = walletAddresses[currency];
-            document.getElementById('wallet-modal').style.display = 'flex';
-        }
-        
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-        }
-        
-        // Подтверждение пополнения
-        function confirmDeposit() {
-            const amount = document.getElementById('deposit-amount').value;
-            if (!amount || amount <= 0) {
-                showNotification('Введите корректную сумму', 'error');
-                return;
-            }
-            
-            // Отправляем данные в Telegram бот
-            if (WebApp && WebApp.sendData) {
-                WebApp.sendData(JSON.stringify({
-                    action: 'deposit',
-                    currency: selectedCurrency,
-                    amount: parseFloat(amount)
-                }));
-                showNotification(`Запрос на пополнение ${amount} ${selectedCurrency} отправлен`);
-            } else {
-                // Имитация для тестирования
-                showNotification(`Создан платеж на пополнение ${amount} ${selectedCurrency}`);
-                // userBalance += parseFloat(amount); // Не обновляем напрямую, только через API
-                // updateUI();
-            }
-            
-            closeModal('wallet-modal');
-            document.getElementById('deposit-amount').value = '';
-        }
-        
-        // Подтверждение вывода
-        function confirmWithdraw() {
-            const amount = document.getElementById('withdraw-amount').value;
-            const address = document.getElementById('withdraw-address').value;
-            
-            if (!amount || amount <= 0) {
-                showNotification('Введите корректную сумму', 'error');
-                return;
-            }
-            
-            if (!address) {
-                showNotification('Введите адрес кошелька получателя', 'error');
-                return;
-            }
-            
-            // Проверка баланса лучше делать на сервере, но для UX можно и здесь
-            // if (parseFloat(amount) > userBalance) {
-            //     showNotification('Недостаточно средств', 'error');
-            //     return;
-            // }
-            
-            // Отправляем данные в Telegram бот
-            if (WebApp && WebApp.sendData) {
-                WebApp.sendData(JSON.stringify({
-                    action: 'withdraw',
-                    amount: parseFloat(amount),
-                    address: address
-                }));
-                showNotification(`Запрос на вывод ${amount} USD отправлен`);
-            } else {
-                // Имитация для тестирования
-                showNotification(`Запрос на вывод ${amount} USD отправлен`);
-                // userBalance -= parseFloat(amount);
-                // updateUI();
-            }
-            
-            closeModal('withdraw-modal');
-            document.getElementById('withdraw-amount').value = '';
-            document.getElementById('withdraw-address').value = '';
-        }
-        
-        // Подтверждение P2P предложения
-        function confirmP2P() {
-            const amount = document.getElementById('p2p-amount').value;
-            const rate = document.getElementById('p2p-rate').value;
-            const comment = document.getElementById('p2p-comment').value;
-            
-            if (!amount || !rate) {
-                showNotification('Заполните все обязательные поля', 'error');
-                return;
-            }
-            
-            // Отправляем данные в Telegram бот
-            if (WebApp && WebApp.sendData) {
-                WebApp.sendData(JSON.stringify({
-                    action: 'p2p_create',
-                    type: p2pType,
-                    amount: parseFloat(amount),
-                    rate: parseFloat(rate),
-                    comment: comment
-                }));
-                showNotification(`P2P предложение ${p2pType === 'buy' ? 'покупки' : 'продажи'} создано`);
-            } else {
-                // Имитация для тестирования
-                showNotification(`P2P предложение ${p2pType === 'buy' ? 'покупки' : 'продажи'} создано`);
-            }
-            
-            closeModal('p2p-modal');
-            document.getElementById('p2p-amount').value = '';
-            document.getElementById('p2p-rate').value = '';
-            document.getElementById('p2p-comment').value = '';
-        }
-        
-        // Калькулятор дохода
-        function calculateIncome() {
-            const amount = parseFloat(document.getElementById('calc-amount').value);
-            if (!amount || amount <= 0) {
-                showNotification('Введите корректную сумму', 'error');
-                return;
-            }
-            
-            // Расчеты как в боте
-            const days = [7, 30, 90];
-            let resultsHtml = '';
-            
-            for (const day of days) {
-                let balance = amount;
-                let totalIncome = 0;
-                
-                for (let d = 1; d <= day; d++) {
-                    const dailyRate = balance < 1000 ? 0.02 : 0.03;
-                    const dailyIncome = balance * dailyRate;
-                    totalIncome += dailyIncome;
-                    balance += dailyIncome;
-                }
-                
-                const dailyRate = amount < 1000 ? 2 : 3;
-                resultsHtml += `
-                    <div style="margin-bottom: 15px; padding: 10px; background: #f0f8ff; border-radius: 8px;">
-                        <strong>${day} дней:</strong><br>
-                        Итоговая сумма: <strong>$${balance.toFixed(2)}</strong><br>
-                        Доход: <strong>$${totalIncome.toFixed(2)}</strong> (${dailyRate}%/день)
-                    </div>
-                `;
-            }
-            
-            document.getElementById('calc-results-content').innerHTML = resultsHtml;
-            document.getElementById('calc-results').style.display = 'block';
-            showNotification('Расчет выполнен');
+            WebApp.openTelegramLink('https://t.me/your_bot_username?start=calculator'); // TODO: Замените your_bot_username
         }
         
         // Копирование реферальной ссылки
@@ -1038,17 +500,9 @@
             }, 3000);
         }
         
-        // Закрытие модальных окон при клике вне их
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) {
-                event.target.style.display = 'none';
-            }
-        }
-        
         // Инициализация при загрузке
         window.onload = function() {
-            // Начинаем загрузку данных пользователя сразу при загрузке страницы
-            fetchUserData();
+            initApp();
         };
     </script>
 </body>
