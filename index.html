@@ -396,25 +396,41 @@
         let tg = window.Telegram.WebApp;
         let initData = tg.initData;
         let userData = null;
-        const API_BASE = '64.188.79.162:8080'; // Замените на IP вашего выделенного сервера (например: 123.456.789.0:8080)
+        const API_BASE = 'https://5db37a6b-f638-425c-976b-8614d9e0897a-00-1bd8qq96kafpq.janeway.replit.dev:8080'; // Временно используем Replit URL для тестирования
 
         // Инициализация
         document.addEventListener('DOMContentLoaded', function() {
-            // Настройка Telegram WebApp
-            tg.ready();
-            tg.expand();
+            console.log('Page loaded');
+            
+            // Проверяем, есть ли Telegram WebApp
+            if (window.Telegram && window.Telegram.WebApp) {
+                console.log('Telegram WebApp detected');
+                // Настройка Telegram WebApp
+                tg.ready();
+                tg.expand();
+                
+                console.log('Init data:', tg.initData);
+                
+                // Настройка главной кнопки
+                tg.MainButton.setText('Пополнить баланс').show();
+                tg.MainButton.onClick(showDepositModal);
+            } else {
+                console.log('Telegram WebApp not detected, using test mode');
+                // Для тестирования вне Telegram
+                initData = 'user=%7B%22id%22%3A7221671920%2C%22first_name%22%3A%22Test%22%2C%22username%22%3A%22test%22%7D&hash=test';
+            }
             
             // Загрузка данных пользователя
             loadUserData();
-            
-            // Настройка главной кнопки
-            tg.MainButton.setText('Пополнить баланс').show();
-            tg.MainButton.onClick(showDepositModal);
         });
 
         // Функции API
         async function apiRequest(endpoint, data = {}) {
             try {
+                console.log('Making API request to:', `http://${API_BASE}/api/${endpoint}`);
+                console.log('Init data:', initData);
+                console.log('Request data:', data);
+                
                 const response = await fetch(`http://${API_BASE}/api/${endpoint}`, {
                     method: 'POST',
                     headers: {
@@ -426,14 +442,20 @@
                     })
                 });
 
+                console.log('Response status:', response.status);
+                
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    const errorText = await response.text();
+                    console.error('Response error:', errorText);
+                    throw new Error(`HTTP error! status: ${response.status} - ${errorText}`);
                 }
 
-                return await response.json();
+                const result = await response.json();
+                console.log('Response data:', result);
+                return result;
             } catch (error) {
                 console.error('API Error:', error);
-                showNotification('Ошибка подключения к серверу', 'error');
+                showNotification(`Ошибка: ${error.message}`, 'error');
                 return null;
             }
         }
